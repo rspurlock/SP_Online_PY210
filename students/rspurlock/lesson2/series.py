@@ -1,5 +1,12 @@
-# Function to compute the Nth fibonacci value
 def fibonacci(n):
+    """
+    Function to compute the Nth fibonacci series value
+
+    Positional Parameters
+    :param n:   Desired fibonacci series value (which Nth value)
+
+    :return:    Requested Nth fibonacci value
+    """
     if (n > 1):
         return fibonacci(n - 2) + fibonacci(n - 1)
     elif (n == 1):
@@ -15,8 +22,15 @@ print("fibonacci(7) → ", fibonacci(7))
 print()
 
 
-# Function to compute the Nth Lucas value
 def lucas(n):
+    """
+    Function to compute the Nth lucas series value
+
+    Positional Parameters
+    :param n:   Desired lucas series value (which Nth value)
+
+    :return:    Requested Nth lucas value
+    """
     if (n > 1):
         return lucas(n - 2) + lucas(n - 1)
     elif (n == 1):
@@ -47,8 +61,17 @@ print(lucas(9))
 print()
 
 
-# Function to compute general fibonacci style series values from given starting values
 def sumSeries(n, first = 0, second = 1):
+    """
+    Function to compute the Nth general series value
+
+    Positional Parameters
+    :param n:       Desired series value (which Nth value)
+    :param first:   Series first starting value (Defaults to 0 for fibonacci series)
+    :param second:  Series second starting value (Defaults to 1 for fibonacci series)
+
+    :return:    Requested Nth series value
+    """
     if (n > 1):
         return sumSeries((n - 2), first, second) + sumSeries((n - 1), first, second)
     elif (n == 1):

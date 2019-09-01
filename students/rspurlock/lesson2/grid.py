@@ -1,36 +1,67 @@
-# Function to print a "beam" pattern of the given width
 def printBeam(width):
+    """
+    Function to print a single column of the beam pattern for a grid cell
+
+    :param width:   Width of the grid cell
+    """
     print('+' + (' -' * width), end = ' ')
 
 
-# Function to print a "post" pattern of the given width
 def printPost(width):
+    """
+    Function to print a single column of the post pattern for a grid cell
+
+    :param width:   Width of the grid cell
+    """
     print('|' + ('  ' * width), end = ' ')
 
 
-# Function to print the requested number of beam columns (with the given width)
 def printBeams(columns, width):
+    """
+    Function to print the given number of columns of the beam pattern for grid cells
+
+    :param columns: Number of beam columns to print
+    :param width:   Width of the grid cell
+    """
     for c in range(columns):
         printBeam(width)
     print('+')
 
 
-# Function to print the requested number of post columns (with the given width)
 def printPosts(columns, width):
+    """
+    Function to print the given number of columns of the post pattern for grid cells
+
+    :param columns: Number of post columns to print
+    :param width:   Width of the grid cell
+    """
     for c in range(columns):
         printPost(width)
     print('|')
 
 
-# Function to print a complete grid row with the desired number of columns and the given cell width and height
 def printRow(columns, width, height):
+    """
+    Function to print the given number of columns of the complete (beam/post) patterns for grid cells (Complete row)
+
+    :param columns: Number of columns to print
+    :param width:   Width of the grid cell
+    :param height:  Height of the grid cell
+    """
     printBeams(columns, width)
     for h in range(height):
         printPosts(columns, width)
 
 
-# Function to print a complete grid with default values for the number of rows, columns, and cell width and height
 def printGrid(rows = 2, columns = 2, width = 4, height = 4):
+    """
+    Function to print a complete grid of beam/post patterns
+
+    :param rows:    Number of rows in the grid (Defaults to a grid of 2 rows)
+    :param columns: Number of columns in the grid (Defaults to a grid of 2 columns)
+    :param width:   Width of a grid cell (Defaults to a grid cell width of 4)
+    :param height:  Height of a grid cell (Defaults to a grid cell height of 4)
+    """
     for r in range(rows):
         printRow(columns, width, height)
     printBeams(columns, width)
@@ -38,11 +69,21 @@ def printGrid(rows = 2, columns = 2, width = 4, height = 4):
 
 # Alternate function to print a grid of a desired size (Always prints a 2x2 grid with variable cell size)
 def printGridSize(size):
+    """
+    Alternate function to print a complete grid of beam/post patterns of a requested size
+
+    :param size:    Determines the size of the grid cell (width and height, grid size is 2x2)
+    """
     printGrid(2, 2, size // 2, size // 2)
 
 
-# Alternate function to print a grid of a desired size (square) and cell size
 def printGridSizes(gridSize, cellSize):
+    """
+    Alternate function to print a complete grid of beam/post patterns of the requested sizes
+
+    :param gridSize:    Determines the size of the grid (rows and columns, grid is always square)
+    :param cellSize:    Determines the size of the grid cell (width and height, grid cell is always square)
+    """
     printGrid(gridSize, gridSize, cellSize, cellSize)
 
 
