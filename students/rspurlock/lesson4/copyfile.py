@@ -24,6 +24,7 @@ else:   # Not interactive usage (Check for command line arguments)
         destination = sys.argv[2]
 
     else:
+
         print('Usage: copyfile source destination')
         exit()
 
